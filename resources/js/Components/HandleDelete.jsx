@@ -6,7 +6,7 @@ export default function handleDelete(e, to, slug, token) {
     _token: token
   }
   )
-  toast.error('Data berhasil Dihapus',
+  toast.error('Data berhasil Dihapus 🗑',
     {
       position: "top-center",
       autoClose: 1000,

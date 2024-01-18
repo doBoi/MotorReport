@@ -14,7 +14,7 @@ export default function HandleUpdate(e, values, to) {
     _token: values.token
   }
   )
-  toast.warning(values.spk + " berhasil Diubah",
+  toast.warning(values.spk + " berhasil Diubah 📌",
     {
       position: "top-center",
       autoClose: 1000,
