@@ -1,0 +1,37 @@
+created:
+    - app/Http/Controllers/AssemblingController.php
+    - app/Http/Controllers/DissmantlingController.php
+    - database/factories/SeriesFactory.php
+    - database/factories/MotorFactory.php
+    - database/factories/AssemblingFactory.php
+    - database/factories/DissmantlingFactory.php
+    - database/migrations/2024_01_06_050741_create_series_table.php
+    - database/migrations/2024_01_06_050742_create_motors_table.php
+    - database/migrations/2024_01_06_050743_create_assemblings_table.php
+    - database/migrations/2024_01_06_050744_create_dissmantlings_table.php
+    - app/Models/Series.php
+    - app/Models/Motor.php
+    - app/Models/Assembling.php
+    - app/Models/Dissmantling.php
+    - tests/Feature/Http/Controllers/AssemblingControllerTest.php
+    - tests/Feature/Http/Controllers/DissmantlingControllerTest.php
+    - app/Http/Requests/AssemblingStoreRequest.php
+    - app/Http/Requests/AssemblingUpdateRequest.php
+    - app/Http/Requests/DissmantlingStoreRequest.php
+    - app/Http/Requests/DissmantlingUpdateRequest.php
+    - resources/views/assembling/index.blade.php
+    - resources/views/assembling/create.blade.php
+    - resources/views/assembling/show.blade.php
+    - resources/views/assembling/edit.blade.php
+    - resources/views/dissmantling/index.blade.php
+    - resources/views/dissmantling/create.blade.php
+    - resources/views/dissmantling/show.blade.php
+    - resources/views/dissmantling/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Series: { id: id, seri: 'string:4', softdeletes: softDeletes, timestamps: timestamps }
+    Motor: { id: id, series_id: 'id foreign:series', hp: 'string:4', volt: 'string:5', amp: 'string:4', softdeletes: softDeletes, timestamps: timestamps }
+    Assembling: { id: id, motor_id: 'foreign:motor', sernum: 'string:40', tgl: date, softdeletes: softDeletes, timestamps: timestamps }
+    Dissmantling: { id: id, motor_id: 'foreign:motor', sernum: 'string:40', tgl: date, softdeletes: softDeletes, timestamps: timestamps }

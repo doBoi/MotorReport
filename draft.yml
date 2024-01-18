@@ -1,0 +1,39 @@
+models:
+  Series:
+    id: id
+    seri: string:4
+    softDeletes
+    timestamps
+
+  Motor:
+    id: id
+    series_id: id foreign:series
+    hp: string:4
+    volt: string:5
+    amp: string:4
+    softDeletes
+    timestamps
+
+  Assembling:
+    id: id
+    motor_id: foreign:motor
+    sernum: string:40
+    tgl: date
+    softDeletes
+    timestamps
+
+  Dissmantling:
+    id: id
+    motor_id: foreign:motor
+    sernum: string:40
+    tgl: date
+    softDeletes
+    timestamps
+
+controllers:
+  Assembling:
+    resource
+  Dissmantling:
+    resource
+
+
